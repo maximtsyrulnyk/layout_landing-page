@@ -3,6 +3,8 @@
   font-size: 16px;
   line-height: 140px;
   color: #292929;
+
+  scroll-behavior: smooth;
 }
 
 .page__body {
@@ -75,6 +77,8 @@
   padding: 24px 20px 40px;
   height: 100vh;
   background-color: #E5E5E5;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .menu__content {
@@ -87,8 +91,41 @@
   align-items: center;
 }
 
-/* #endregion */
+.menu__phone-number {
+  display: block;
+  font-size: 16px;
+  line-height: 27px;
+color: inherit;
+text-decoration: none;
+}
 
+.menu__call-to-order {
+  display: block;
+  font-size: 12px;
+  line-height: 16;
+color: inherit;
+text-decoration: none;
+}
+
+/* #endregion */
+/* #region nav */
+.nav__link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: 2px;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+/* endregion */
 /* #region icon */
 .icon {
   display: block;
