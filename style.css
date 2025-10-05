@@ -1,12 +1,26 @@
-html {
+.page {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   line-height: 140px;
   color: #292929;
 }
 
-body {
+.page__body {
   margin: 0;
+}
+
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page__menu:target{
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* region header */
@@ -57,22 +71,14 @@ body {
 /* region menu */
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   box-sizing: border-box;
   padding: 24px 20px 40px;
   height: 100vh;
   background-color: #E5E5E5;
-
-  opacity: 0;
-  pointer-events: none;
 }
 
-.menu:target{
-  opacity: 1;
-  pointer-events: all;
+.menu__content {
+  position: relative;
 }
 
 .menu__top {
