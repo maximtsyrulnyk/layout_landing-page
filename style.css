@@ -1,23 +1,110 @@
-/* #region header */
+html {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 140px;
+  color: #292929;
+}
+
+body {
+  margin: 0;
+}
+
+/* region header */
+
 .header {
+  box-sizing: border-box;
+  padding: 24px 20px 40px;
   height: 100vh;
   background-image: url(/src/images/header-bg-mobile.png);
   background-size: cover;
+  background-position: center;
 
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* #end region */
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__icons {
+  display: flex;
+  gap: 24px;
+}
+
+.header__waves {
+  height: 57px;
+  width: 48px;
+  margin-bottom: 16px;
+  background-image: url(/src/images/sound-waves.png);
+}
+
+.header__title {
+  margin: 0;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -1.5px;
+}
+
+/* #endregion */
+
+/* region menu */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 24px 20px 40px;
+  height: 100vh;
+  background-color: #E5E5E5;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu:target{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* #endregion */
 
 /* #region icon */
 .icon {
-
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-image: url(/src/images/icons/icon-burger-menu.png);
 }
 
-/* #end region */
+.icon--phone  {
+  background-image: url(/src/images/icons/icon-phone.png);
+}
+
+.icon--menu {
+  background-image: url(/src/images/icons/icon-burger-menu.png);
+}
+
+.icon--close {
+  background-image: url(/src/images/icons/Icon-Close.png);
+}
+
+/* #endregion */
 
 /* #region footer */
-.footer {
 
-}
-
-/* #end region */
+/* #endregion */
