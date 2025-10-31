@@ -2,10 +2,15 @@
   display: block;
   height: 24px;
   width: 24px;
-  background-image: url(../images/icons/icon-burger-menu.png);
   background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
 
-@include onTablet {
+  &:hover {
+    transform: scale(1.2);
+}
+
+  @include onTablet {
     height: 32px;
     width: 32px;
   }
@@ -22,5 +27,3 @@
     background-image: url(../images/icons/Icon-Close.png);
   }
 }
-
-
