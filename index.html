@@ -1,122 +1,430 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!-- #region head -->
+<!doctype html>
+<html
+  lang="en"
+  class="page"
+>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MYBIKE — Електровелосипеди нового покоління</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>My Bike</title>
+    <link rel="icon"
+    type="image/x-icon"
+    href="/layout_landing-page/assets/favicon-MlyrZwdl.png">
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/layout_landing-page/assets/index-g6fOWbor.css">
   </head>
-  <body>
-    <!-- Header -->
+  <!-- #endregion -->
+  <body class="page__body">
     <header class="header">
-      <div class="container header__inner">
-        <a href="#" class="logo">
-          <img src="images/logo.svg" alt="MYBIKE Logo" />
-        </a>
+      <div class="header__content">
+        <div class="top-bar">
+          <a href="#" class="top-bar__logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAAAmCAYAAAAIjkMFAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAU2SURBVHgB7ZvtcdQwEIbfMPznOsBUwFEBpoJABZgKuFQQp4IjFZypIKGCMxWQVGB3kHQgtGddPhTtSrJlZ5LzM6M5Yq0l21qvXq0MMNMbpVSmy1qXG9XxT5cCM4eFHvRGuVlh5jDQg/1V8dzghfFWX3Qp1F8dHR1dIhIKmfqnEEwudbtXGBl9HUv98xVx3OrSorv3VrDLhLoFHl/Hyj5mqHUfNQQ843P3HIU+wlAyvTyb5klPuwUmIOA6fLBzvj6eS+dZtg1jV3quf52gjyDeQGahbXLEc4rXAUWUjX4GVB69beZNPnOcQxHlGwai+/upfzit0abo4yFvA2xoUGsEYhwnw+uiML8/Hh7UzlDq+631P3Nd3utyrUulj99iAKqb0n4x1dT2F8+0FU2II1AIXEbM6d/xOqFp5rc9p5u/ayRCdfrqQjA5Se0ERIgjECS4vI6g/CLxoe0CvJC7DRGpug06nxNI0vn0Vp1Yx6gdehMlR6b+6oD+rwaIYXKCjKk70+1WiKPS5a/XKlBL3NhzJNPWOrC9wtg3gs0yoL8b5tzG1BdSPdPmUvFcWrYNY1f2tDtVPBeeZ9Ew5xUIwCcW95ATFAF2sUu1333bMjfIOecZemLeZO5tfoeRUJ04LJnqFpY+SU2oIxDHUqUZmAxxkCDihNVPyHAhvO0RPm24a7rGCKhuSi2Z6hadOBwkQH3EOAKJxlyojxaJ5ubOmWp26WoeXM6cx7UXhKft6ORaYH9b8NHt2xji0CZULO5xLiWFh0cD7dMWFfi8A7d0LcATMlgLZu78KLR97ssC9mQNPpKeJMjAHpvx4SBh/ksSixvm+JOBZWy3oQLG2KqI/hrGdmPZDc0s7qlcT1ANF4uN0GeJCFT/zOJOOEtTAy05XPPSyrqADG5hJwlBG0nc2f3lEJZXSEuLbn4uMA4Zc5z2IEpMiE8juOZbW8TleBr+owSbJynz2fqb0yL1CHNphi7FXGBalkoO58nxOYIrzUnz68MI4Jrfa8TDRZA7karkhFXqaLAnQ+cMY+yftMxxerG2KiB3kwrREYyqrx1Vu6gghOk+g0Iij1si7R0vZ+rbSCHX6vLBUT6BX3XQvsIKaSHnr5m6DHKqORTKoH4QypedlSAiClPPfYBBb+rGcXy7vwIVme3Sx0vGfpfZVLyo5NqLziz6rsOyaxi7MtTO3BdXT6wRgJogs1jD/aZSVCgcx2NEog2XYKIQSaE5d9SlSCDZVMxxGjRv6jsGE3VpS5mLhis1wadvXkcwF+oaXNdKgWx7J11MX3+Yau5hJE/yQM59ZEiMyRWcCCanqR3QJjSzGPqwLxOkQivEMSiTyCCl00dJ9ZqoxmZZdblQI64kgjKLJMTU/QcYEkOmhdi+iKrnkpHLLNIDP/b03WIk9L3QNPCR6T9D5wyx+w6f9Tleo5gUM4XsXKiPVe4SZwhzhL5LRhrwDeIZI1dhQ7uMJLgzRx1ND2vE7UQWCNg5jtl0qiCHxWTreONQPq+fYlBsRt0KJsw9Sd8j0kooeU4j2BEE0binRlp8c//gaSgCuvcfUzlegHikZWeOhMREBIITjX9GeEjcUpIYY8nIUevyacL+dux2BOWXIal4JI3AhfQn259GyJGn2ssrzkHOwXzTBz8LDP8C6Qr9pixywBbd9CNNUdz91T3tbErIU2SO+1UW18fLRvHb4I2aMAc/84yo7n8Zc/RR+zMvESEaKDXx9uzMM2GiQTNHgwNHyZ+X5Zg5DIRosMXMYeCJBgVmDgMhGjSYOQzmaPC8/AewMPe4jp3fIQAAAABJRU5ErkJggg==" alt="MYBIKE logo"/>
+          </a>
 
-        <nav class="nav">
-          <a href="#about">Про нас</a>
-          <a href="#features">Характеристики</a>
-          <a href="#gallery">Галерея</a>
-          <a href="#contact">Контакти</a>
-        </nav>
+          <div class="top-bar__icons">
+            <div class="number-appearance">
+              <span class="top-bar__additional-phone">+1 234 555-55-55</span>
 
-        <a href="#shop" class="header__btn">Замовити</a>
+              <a href="tel:+1 234 5555-55-55"
+              class="icon icon--phone"></a>
+            </div>
+            <a href="#menu" class="icon icon--menu"></a>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <h1 class="header__title">Take the Streets</h1>
+        </div>
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <h1>Рухайся швидше з MYBIKE</h1>
-          <p>
-            Електровелосипед, створений для міських подорожей. Стильний дизайн,
-            потужна батарея та легка конструкція.
-          </p>
-          <a href="#about" class="btn-primary">Дізнатися більше</a>
+    <aside
+      class="page__menu menu"
+      id="menu"
+    >
+      <div class="menu__content">
+        <div class="top-bar menu__top">
+          <a
+            href="#"
+            class="top-bar__logo"
+          >
+            <img
+              src="data:image/png;base64,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"
+              alt="MYBIKE logo"
+            />
+          </a>
+          <a
+            href="#"
+            class="icon icon--close"
+          ></a>
         </div>
-        <div class="hero__image">
-          <img src="images/hero-bike.png" alt="MYBIKE" />
+        <div class="menu__bottom">
+          <nav class="nav menu__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a
+                  class="nav__link"
+                  href="#"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="nav__item">
+                <a
+                  class="nav__link"
+                  href="#about-us"
+                >
+                  About Us
+                </a>
+              </li>
+              <li class="nav__item">
+                <a
+                  class="nav__link"
+                  href="#compare-bikes"
+                >
+                  Compare Bikes
+                </a>
+              </li>
+              <li class="nav__item">
+                <a
+                  class="nav__link"
+                  href="#details"
+                >
+                  Details
+                </a>
+              </li>
+              <li class="nav__item">
+                <a
+                  class="nav__link"
+                  href="#contacts"
+                >
+                  Contacts
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <a
+            href="tel:+1 234 5555-55-55"
+            class="menu-phone-number"
+          >
+            +1234 5555-55-55
+          </a>
+          <a
+            href="tel:+1 234 5555-55-55"
+            class="book-a-test-ride"
+          >
+            Book a test ride
+          </a>
         </div>
       </div>
-    </section>
+    </aside>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container about__inner">
-        <div class="about__image">
-          <img src="images/about-bike.jpg" alt="Про MYBIKE" />
-        </div>
-        <div class="about__content">
-          <h2>Про MYBIKE</h2>
-          <p>
-            MYBIKE — це сучасний електровелосипед для тих, хто цінує швидкість,
-            зручність і екологічність. Ми поєднали передові технології та мінімалістичний дизайн.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <main class="main">
       <div class="container">
-        <h2 class="section-title">Основні характеристики</h2>
-        <div class="features__grid">
-          <div class="feature-card">
-            <img src="images/feature-speed.svg" alt="Швидкість" />
-            <h3>До 45 км/год</h3>
-            <p>Відчуй свободу руху з потужним мотором нового покоління.</p>
-          </div>
-          <div class="feature-card">
-            <img src="images/feature-battery.svg" alt="Батарея" />
-            <h3>120 км без підзарядки</h3>
-            <p>Їдь далі завдяки високоефективній літієвій батареї.</p>
-          </div>
-          <div class="feature-card">
-            <img src="images/feature-weight.svg" alt="Вага" />
-            <h3>Вага 13 кг</h3>
-            <p>Легка алюмінієва рама — зручно переносити та зберігати.</p>
+        <div class="main__content">
+          <!-- #region move-free -->
+          <section
+            class="move-free"
+            id="move-free"
+          >
+            <h2
+              class="move-free__title section-title section-title--align--left"
+            >
+              Move Free
+            </h2>
+
+            <p class="move-free__speech">
+              Shift your ride, not gears. Find the fastest way to move in the
+              city as the bike adapts intuitively to power the speed you need.
+            </p>
+          </section>
+          <!-- #endregion -->
+
+          <!--#region Compare Bikes  -->
+          <div class="wrapper-content">
+            <section
+              class="compare"
+              id="compare-bikes"
+            >
+              <h2 class="section-title">Compare Bikes</h2>
+              <div class="recommendet__product">
+                <article class="product">
+                  <img
+                    src="/layout_landing-page/assets/Sporty%204-BvEf6wqN.png"
+                    alt="Sporty 4"
+                    class="product__photo"
+                  />
+                  <h3 class="product__name">Sporty 4</h3>
+                  <p class="product__description">
+                    The iconic frame brought to a new performance height as a
+                    sporty, active ride.
+                  </p>
+                  <p class="product__price">2590</p>
+                </article>
+                <article class="product">
+                  <img
+                    src="/layout_landing-page/assets/Ride%20in%20town%20ST-CGaEIRV3.png"
+                    alt="Ride in town ST"
+                    class="product__photo"
+                  />
+                  <h3 class="product__name">Ride in town ST</h3>
+                  <p class="product__description">
+                    An open frame for an upright riding position as the most
+                    comfortable ride in town.
+                  </p>
+                  <p class="product__price">$ 2 590</p>
+                </article>
+                <article class="product">
+                  <img
+                    src="/layout_landing-page/assets/Agile%20ride%203-Cne4mtrW.png"
+                    alt="Sporty 4"
+                    class="product__photo"
+                  />
+                  <h3 class="product__name">Agile ride 3</h3>
+                  <p class="product__description">
+                    The lightweight frame that has earned its street tread as a
+                    sleek, agile ride.
+                  </p>
+                  <p class="product__price">$ 2 090</p>
+                </article>
+              </div>
+            </section>
+            <!-- #endregion -->
+            <!-- #region The Details -->
+            <section
+              class="details"
+              id="details"
+            >
+              <h2 class="section-title">The Details</h2>
+              <div class="details__wrapper">
+                <article class="detail">
+                  <div class="detail__photos">
+                    <a
+                      href="#"
+                      class="detail__link detail__link--wide"
+                    >
+                      <img
+                        class="detail__photo"
+                        src="/layout_landing-page/assets/image-navi-Bk54ctFL.png"
+                        alt="image navi"
+                      />
+                    </a>
+                    <a
+                      href="#"
+                      class="detail__link detail__link--square"
+                    >
+                      <img
+                        class="detail__photo"
+                        src="/layout_landing-page/assets/image-handlebar-C-el8_HC.png"
+                        alt="image handlebar"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="detail__description">
+                    <h3 class="detail__paragraph">Auto Unlock</h3>
+                    <div class="wraper-title">
+                      <p class="detail__title">
+                        THE app senses when you're nearby to unlock automatically.
+                        GPS tracking so you know where your bike is and can track
+                        it anytime.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="detail">
+                  <div class="detail__photos">
+                    <a
+                      href="#"
+                      class="detail__link detail__link--wide"
+                    >
+                      <img
+                        class="detail__photo"
+                        src="/layout_landing-page/assets/bike-back-DxYQXwUh.png"
+                        alt="image navi"
+                      />
+                    </a>
+                    <a
+                      href="#"
+                      class="detail__link detail__link--square"
+                    >
+                      <img
+                        class="detail__photo"
+                        src="/layout_landing-page/assets/bike-front-DPS8ys_u.png"
+                        alt="image handlebar"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="detail__description">
+                    <h3 class="detail__paragraph">Range & Integrated lights</h3>
+                    <div class="wraper-title">
+                      <p class="detail__title">
+                        The removable battery has up to 70km battery autonomy and
+                        weighs only 2.4 kg. Lights integrated into the frame give
+                        you always-on visibility day and night.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article class="detail">
+                  <div class="detail__photos">
+                    <a
+                      href="#"
+                      class="detail__link detail__link--square"
+                    >
+                      <img
+                        class="detail__photo"
+                        src="/layout_landing-page/assets/grip-BIvOt2ow.png"
+                        alt="image navi"
+                      />
+                    </a>
+                    <a
+                      href="#"
+                      class="detail__link detail__link--wide"
+                    >
+                      <img
+                        class="detail__photo"
+                        src="/layout_landing-page/assets/stand-DSUgTDY8.png"
+                        alt="image handlebar"
+                      />
+                    </a>
+                  </div>
+                  <div class="detail__description">
+                    <h3 class="detail__paragraph">
+                      Hydraulic disc brakes & Lightweight
+                    </h3>
+                    <div class="wraper-title">
+                      <p class="detail__title">
+                        Brakes with total stopping power the second you make
+                        contact. The removable battery has up to 70km battery
+                        autonomy and weighs only 2.4 kg. Lights integrated into
+                        the frame give you always-on visibility day and night.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+            <!-- #endregion -->
+
+            <div class="button-card">
+              <h3 class="button-card__title"></h3>
+              <button
+                class="button-card__explore"
+                type="button"
+              >
+                Explore
+              </button>
+            </div>
+
+            <h2 class="contact-us">Contact us</h2>
+
+            <section
+              class="contacts-section"
+              id="contacts"
+            >
+              <div class="contacts-section__form">
+                <div class="contacts-section__form__name">
+                  <input
+                    type="text"
+                    class="contacts-section__form__input--name"
+                    id="input-name"
+                    placeholder="Name"
+                  />
+                </div>
+
+                <div class="contacts-section__form__email">
+                  <input
+                    type="text"
+                    class="contacts-section__form__input--email"
+                    id="input-email"
+                    placeholder="Email"
+                  />
+                </div>
+
+                <div class="contacts-section__form__massage">
+                  <form onsubmit="this.reset(); return false;">
+                    <input
+                      type="text"
+                      class="contacts-section__form__input--message"
+                      id="input-message"
+                      placeholder="Message"
+                    />
+                  </form>
+                </div>
+                <button
+                  class="button-card__send"
+                  type="button"
+                >
+                  Send
+                </button>
+              </div>
+              <div class="contact-block">
+                <address class="contact-info">
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Phone</span>
+                    <a
+                      href="tel:+1234555555555"
+                      class="contact-info__value--phone"
+                    >
+                      +1 234 5555-55-55
+                    </a>
+                  </div>
+
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Email</span>
+                    <a
+                      href="mailto:hello@miami.com"
+                      class="contact-info__value--email"
+                    >
+                      hello@miami.com
+                    </a>
+                  </div>
+
+                  <div class="contact-info__item">
+                    <span class="contact-info__label">Address</span>
+                    <a
+                      class="contact-info__value--text"
+                      href="https://maps.google.com/?q=400+first+ave.+suite+700+Minneapolis,+MN+55401"
+                      target="_blank"
+                    >
+                      400 first ave.
+                      <br />
+                      suite 700
+                      <br />
+                      Minneapolis, MN 55401
+                    </a>
+                  </div>
+                </address>
+              </div>
+            </section>
           </div>
         </div>
       </div>
-    </section>
+      <div
+        class="footer-background"
+        alt="footer-background"
+      ></div>
+    </main>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-      <div class="container">
-        <h2 class="section-title">Галерея</h2>
-        <div class="gallery__grid">
-          <img src="images/gallery-1.jpg" alt="Фото велосипеда 1" />
-          <img src="images/gallery-2.jpg" alt="Фото велосипеда 2" />
-          <img src="images/gallery-3.jpg" alt="Фото велосипеда 3" />
-          <img src="images/gallery-4.jpg" alt="Фото велосипеда 4" />
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container cta__inner">
-        <h2>Готовий до поїздки?</h2>
-        <p>Замов свій MYBIKE сьогодні та отримай доставку безкоштовно!</p>
-        <a href="#shop" class="btn-primary">Замовити зараз</a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-      <div class="container footer__inner">
-        <a href="#" class="logo">
-          <img src="images/logo.svg" alt="MYBIKE Logo" />
-        </a>
-        <nav class="footer__nav">
-          <a href="#about">Про нас</a>
-          <a href="#features">Характеристики</a>
-          <a href="#gallery">Галерея</a>
-        </nav>
-        <p>© 2025 MYBIKE. Усі права захищені.</p>
-      </div>
-    </footer>
+    <footer></footer>
   </body>
 </html>
