@@ -34,7 +34,7 @@ body {
 // Main container
 
 .container {
-  @include _responsive;
+  // @include _responsive;
   overflow-x: hidden;
 }
 

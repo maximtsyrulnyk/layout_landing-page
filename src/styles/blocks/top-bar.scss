@@ -1,63 +1,66 @@
-@use '../utils/mixins';
-@use '../utils/variables' as v;
-
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: 24px;
 
-  @include mixins.on-tablet {
-    padding-block: 64px;
+  @include on-tablet {
+    padding-block: 36px;
   }
 
   &__icons {
     display: flex;
-    align-items: center;
-    gap: 24px;
-  }
+    gap: $icon-gap-small;
 
-  .number-appearance {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
-
-  &__additional-phone {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    color: transparent;
-  }
-
-  .number-appearance:hover {
-    .icon--phone {
-      transform: rotate(90deg);
+    @include on-tablet {
+      gap: $icon-gap-big;
     }
+  }
 
-    @include mixins.on-desktop {
-      .top-bar__additional-phone {
-        opacity: 1;
-        color: v.$main-text-color;
-        white-space: nowrap;
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 130px;
+    height: 38px;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      width: 187px;
+      height: 56px;
+    }
+  }
+
+  &__number {
+    &--value {
+      position: absolute;
+      right: 2 * $icon-dimensions-small + $icon-gap-small + 20px;
+      transform-origin: right;
+      transform: scale(0);
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      text-wrap: nowrap;
+      letter-spacing: 2px;
+
+      transition: transform $effect-duration;
+
+      @include on-tablet {
+        right: 2 * $icon-dimensions-big + $icon-gap-big + 20px;
       }
     }
   }
 
-  // .icon--phone {
-  //   // padding-right: 9px;
-
-  //   // transition: transform 0.3s ease-in-out;
-  // }
-
-  &__logo {
+  &__icon-wrapper {
+    position: relative;
     display: flex;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
+    align-items: center;
 
-  &__logo:hover {
-    display: flex;
-    transform: translateY(-5px);
+    &:has(.icon--phone:hover) .top-bar__number--value {
+      transform: scale(1);
+    }
   }
 }

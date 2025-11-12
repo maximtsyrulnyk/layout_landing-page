@@ -1,156 +1,50 @@
-// Media queries
-@import './variables.scss';
-@mixin mobile {
-  @media (max-width: #{$breakpoint-sm - 1px}) {
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media (max-width: #{$breakpoint-md - 1px}) {
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
     @content;
   }
 }
 
-@mixin laptop {
-  @media (max-width: #{$breakpoint-lg - 1px}) {
-    @content;
+@mixin content-width {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 72px;
   }
-}
 
-@mixin desktop {
-  @media (min-width: #{$breakpoint-lg}) {
-    @content;
+  @include on-desktop {
+    max-width: 1020px;
+    margin: auto;
+    padding-inline: 120px;
   }
+
+  @content;
 }
 
-@mixin desktop-xl {
-  @media (min-width: #{$breakpoint-xl}) {
-    @content;
-  }
-}
-
-// Container padding
-@mixin container-padding($padding: $container-padding) {
-  padding-left: $padding;
-  padding-right: $padding;
-}
-
-// Button styles
-@mixin button-base {
-  cursor: pointer;
-  transition: all $transition-base;
-  border: none;
-  border-radius: $border-radius-sm;
-  font-family: inherit;
-  font-size: inherit;
-  text-align: center;
-  display: inline-block;
-  text-decoration: none;
-
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effect-duration;
   &:hover {
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(0);
+    #{$property}: $toValue;
   }
 }
 
-@mixin button-primary {
-  background-color: $primary-color;
-  color: $white;
-  padding: $spacing-md $spacing-lg;
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
 
-  &:hover {
-    background-color: $primary-hover;
-    box-shadow: $shadow-md;
-  }
-}
-
-@mixin button-secondary {
-  background-color: transparent;
-  color: $text-color;
-  border: 1px solid $border-color;
-  padding: $spacing-md $spacing-lg;
-
-  &:hover {
-    border-color: $primary-color;
-    color: $primary-color;
-    box-shadow: $shadow-sm;
-  }
-}
-
-// Focus style for form elements
-@mixin focus-style($color: $primary-color) {
-  outline: none;
-  border-color: $color;
-  box-shadow: 0 0 0 2px rgba($color, 0.2);
-}
-
-// Validation styles
-@mixin validation-style($color) {
-  border-color: $color;
-  box-shadow: 0 0 0 2px rgba($color, 0.2);
-}
-
-// Flex center
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-// Position absolute center
-@mixin absolute-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-// Truncate text
-@mixin truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-// Visually hidden (for accessibility)
-@mixin visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-// Container
-@mixin container {
-  max-width: $container-max-width;
-  margin: 0 auto;
-  @include container-padding;
-
-  @include tablet {
-    @include container-padding($container-padding-md);
+  @include on-tablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 24px;
   }
 
-  @include mobile {
-    @include container-padding($container-padding-sm);
+  @include on-desktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
   }
 }

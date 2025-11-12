@@ -1,37 +1,39 @@
-@use '../utils/mixins.scss';
-@use '../utils/variables' as v;
-
 .page {
   scroll-behavior: smooth;
-
-  font-family: v.$font-family;
-
-  // font-size: 16px;
-  line-height: 140%;
-  color: #fff;
+  font-family: Poppins, sans-serif;
+  color: $light-color;
 
   &__body {
-    margin: 0;
-    background-color: #1d1d1d;
+    cursor:
+      url(../images/icons/cursor.png) 0 0,
+      auto;
+    min-width: 320px;
   }
 
   &__menu {
     pointer-events: none;
+    cursor:
+      url(../images/icons/cursor-menu.png) 0 0,
+      auto;
 
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    transform: translateX(200%);
 
     opacity: 0;
+
+    transition: all 0.3s;
+
+    &:target {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
-  &__menu:target {
-    pointer-events: all;
-    opacity: 1;
+  &:has(.page__menu:target) {
+    overflow: hidden;
   }
-}
-
-.page:has(.page__menu:target) {
-  overflow: hidden; /* not to scroll the page */
 }

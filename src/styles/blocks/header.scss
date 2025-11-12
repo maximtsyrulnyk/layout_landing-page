@@ -1,72 +1,57 @@
-@use '../utils/mixins';
-@use '../utils/variables' as v;
-
 .header {
-  background-image: url(../images/cover_photo.png);
-  background-position: 85%;
-  background-size: cover;
-
-  @include mixins.on-tablet {
-    background-position: center;
+  @include content-width {
+    @include on-desktop {
+      max-width: 100%;
+    }
   }
 
-  @include mixins.on-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100vh;
+
+  background-image: url(../images/header-bg.png);
+  background-position: 86%;
+  background-size: cover;
+
+  @include on-tablet {
     background-position: center;
   }
 
   &__content {
-    @include mixins.constent-padding-inline;
-
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @include mixins.on-tablet {
-      height: 628px;
-
-      @include mixins.on-desktop {
-        height: 100vh;
-      }
-    }
+    height: 100vh;
   }
 
   &__title {
-    display: block;
-    margin: 0;
-    font-family: v.$font-family;
-
     font-size: 36px;
     font-weight: 700;
-
+    font-style: Bold;
     line-height: 100%;
     letter-spacing: -1.5px;
-    text-align: center;
 
-    @include mixins.on-tablet {
-      width: 600px;
-
+    @include on-tablet {
       font-size: 64px;
     }
 
-    @include mixins.on-desktop {
+    @include on-desktop {
       font-size: 80px;
-      width: 672px;
     }
   }
 
   &__bottom {
-    text-align: center;
-
     display: flex;
     justify-content: center;
     padding-bottom: 88px;
 
-    @include mixins.on-tablet {
+    @include on-tablet {
       padding-bottom: 130px;
     }
 
-    @include mixins.on-desktop {
+    @include on-desktop {
       padding-bottom: 203px;
     }
   }
