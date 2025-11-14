@@ -74,6 +74,17 @@
           <h1 class="header__title">Take the Streets</h1>
         </div>
       </div>
+      <!-- Burger menu -->
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="menu-icon">
+            <svg class="menu-open" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="menu-close" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </span>
+    </button>
     </header>
 
     <aside
@@ -309,9 +320,11 @@
               <h3 class="details__subtitle">Range & Integrated lights</h3>
 
               <p class="details__description">
-                The removable battery has up to 70km battery autonomy and weighs
-                only 2.4 kg. Lights integrated into the frame give you always-on
-                visibility day and night.
+                <section class="range-lights">
+                  <h2>Range & Integrated lights</h2>
+                  <p>The removable battery has up to 70km battery autonomy and weighs only 2.4 kg.</p>
+                  <p>Lights integrated into the frame give you always-on visibility day and night.</p>
+              </section>
               </p>
             </article>
 
