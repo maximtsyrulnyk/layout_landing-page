@@ -1,11 +1,9 @@
 .footer {
   position: sticky;
-  z-index: -1;
   bottom: 0;
 
   height: 200px;
 
-  background-image: url(../images/footer-bg.png);
   background-position: 82%;
   background-size: cover;
 
@@ -16,4 +14,7 @@
   @include on-desktop {
     height: 555px;
   }
+
+  // added z-index for scroll effect
+  z-index: 100; // changed z-index value
 }
