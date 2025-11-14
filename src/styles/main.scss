@@ -1,11 +1,37 @@
 // Import all Sass modules
-@import './utils/variables.scss';
+@import './utils/variables';
 @import './utils/mixins';
 @import 'base';
 @import 'layout';
 @import 'components';
 @import 'forms';
 @import 'responsive';
+
+// Config
+@use 'variables';
+@use 'mixins';
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Blocks
+@use 'blocks/page';
+@use 'blocks/section-title';
+@use 'blocks/about-us';
+@use 'blocks/compare-bikes';
+@use 'blocks/bike';
+@use 'blocks/details';
+@use 'blocks/button';
+@use 'blocks/contacts';
+@use 'blocks/footer';
+@use 'blocks/header';
+@use 'blocks/icon';
+@use 'blocks/input';
+@use 'blocks/main';
+@use 'blocks/menu';
+@use 'blocks/nav';
+@use 'blocks/top-bar';
 
 // Global utility classes
 .visually-hidden {
@@ -290,7 +316,7 @@
   color: $text-color;
 }
 
-::-moz-selection {
-  background-color: rgba($primary-color, 0.2);
-  color: $text-color;
-}
+// ::-moz-selection {
+//   background-color: rgba($primary-color, 0.2);
+//   color: $text-color;
+// }
