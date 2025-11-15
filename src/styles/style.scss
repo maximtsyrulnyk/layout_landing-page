@@ -1,5 +1,5 @@
-@use 'utils/variables';
-@use 'utils/mixins';
+@use 'utils/variables' as *;
+@use '/src/styles/utils/mixins.scss' as *;
 @use 'blocks/header';
 @use 'blocks/top-bar';
 @use 'blocks/icon';
