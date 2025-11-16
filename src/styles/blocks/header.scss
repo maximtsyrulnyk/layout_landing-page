@@ -7,11 +7,11 @@
   background-size: cover;
 
   @include mixins.on-tablet {
-    background-position: center;
+    background-position: right;
   }
 
   @include mixins.on-desktop {
-    background-position: center;
+    background-position: right;
   }
 
   &__content {
