@@ -2,7 +2,7 @@
 @use '../utils/variables' as v;
 
 .header {
-  background-image: url(../src/images/header-bg-mobile.png);
+  background-image: url(./../../../src/images/header-bg-mobile.png);
   background-position: 85%;
   background-size: cover;
 
@@ -23,7 +23,7 @@
     justify-content: space-between;
 
     @include mixins.on-tablet {
-      height: 628px;
+      height: 100vh;
 
       @include mixins.on-desktop {
         height: 100vh;
