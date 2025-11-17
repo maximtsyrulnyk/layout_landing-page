@@ -30,9 +30,9 @@
   }
 
   .number-appearance:hover {
-    .icon--phone {
-      transform: rotate(90deg);
-    }
+    // .icon--phone {
+    //   transform: rotate(90deg);
+    // }
 
     @include mixins.on-desktop {
       .top-bar__additional-phone {
