@@ -9,8 +9,6 @@
   row-gap: 48px;
   padding-bottom: 120px;
 
-  // @include mixins.page-grid;
-
   @include mixins.on-tablet {
     flex-direction: row;
     column-gap: 24px;
@@ -26,8 +24,6 @@
   &__form {
     display: flex;
     flex-direction: column;
-
-    // align-items: stretch;
 
     row-gap: 16px;
     width: 280px;
@@ -154,8 +150,6 @@
     padding-bottom: 8px;
     text-decoration: none;
 
-    // font-weight: 500;
-
     font-size: 14px;
     line-height: 140%;
     letter-spacing: 0;
@@ -183,8 +177,6 @@
       color: v.$main-text-color;
       transition: color 0.3s ease;
 
-      // font-weight: 500;
-
       font-size: 16px;
       line-height: 140%;
       letter-spacing: 0;
@@ -198,8 +190,6 @@
     &--text {
       text-decoration: none;
       color: v.$main-text-color;
-
-      // font-weight: 500;
 
       font-size: 16px;
       line-height: 140%;
