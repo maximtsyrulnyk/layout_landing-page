@@ -2,7 +2,7 @@
 @use '../utils/variables' as v;
 
 .page {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 
   font-family: v.$font-family;
 
@@ -32,6 +32,6 @@
   }
 }
 
-.page:has(.page__menu:target) {
-  overflow: hidden; /* not to scroll the page */
-}
+// .page:has(.page__menu:target) {
+//   // overflow: hidden; /* not to scroll the page */
+// }
