@@ -1,68 +1,55 @@
-@use '../utils/mixins';
-@use '../utils/variables' as v;
+.logoblack {
+  content: url('../images/logo-black.png');
+
+  @include on-tablet {
+    width: 130px;
+    height: 38px;
+  }
+}
 
 .menu {
+  overflow: auto;
   box-sizing: border-box;
+
   height: 100vh;
-
-  position: fixed;
-  z-index: 1000;
-
-  font-weight: 700;
+  background-color: #c2c2c2;
+  font-weight: 600;
   text-transform: uppercase;
 
-  background-color: #c2c2c2;
-
   &__top {
-    position: sticky; /* to keep cross always visible */
+    position: sticky;
     top: 0;
     z-index: 1;
-    margin-bottom: 24px;
-  }
-
-  &__content {
-    @include mixins.constent-padding-inline;
-
-    position: relative;
+    background-color: #c2c2c2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
   }
 
   &__nav {
     margin-bottom: 40px;
   }
 
-  &-phone-number {
-    height: 16px;
-
+  &__phone-number {
+    display: block;
+    margin-bottom: 16px;
     font-size: 16px;
-    line-height: 16px;
-    color: v.$menu-text-color;
+    line-height: 27px;
+    color: #1d1d1d;
     text-decoration: none;
-    padding-bottom: 16px;
-    transition: color 0.3s ease;
   }
-  &-phone-number:hover {
-    color: azure;
+
+  &__book-a-test-ride {
+    display: block;
+    width: fit-content;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1d1d1d;
+
+    font-size: 12px;
+    line-height: 16px;
+    color: #1d1d1d;
+    text-decoration: none;
+    letter-spacing: 2px;
   }
-}
-
-.book-a-test-ride {
-  display: block;
-
-  width: fit-content;
-  padding-top: 16px;
-  padding-bottom: 8px;
-
-  font-size: 12px;
-  line-height: 16px;
-  color: v.$menu-text-color;
-  text-decoration: none;
-  letter-spacing: 2px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-
-  transition: color 0.3s ease;
-}
-
-.book-a-test-ride:hover {
-  color: v.$main-text-color;
 }

@@ -1,73 +1,61 @@
-@use '../utils/mixins';
-@use '../utils/variables' as v;
-
 .header {
-  background-image: url(./../../../src/images/header-bg-mobile.png);
-  background-position: 85%;
+  background-image: url(../images/header-bg-mobile.png);
   background-size: cover;
-
-  @include mixins.on-tablet {
-    background-position: right;
-  }
-
-  @include mixins.on-desktop {
-    background-position: right;
-  }
+  background-position: right center;
 
   &__content {
-    @include mixins.constent-padding-inline;
-
     height: 100vh;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @include mixins.on-tablet {
-      height: 100vh;
-
-      @include mixins.on-desktop {
-        height: 100vh;
-      }
-    }
   }
 
-  &__title {
+  &__top--img {
     display: block;
-    margin: 0;
-    font-family: v.$font-family;
+    width: 130px;
+    height: 38px;
+    transition: transform 0.3s ease;
 
-    font-size: 36px;
-    font-weight: 700;
-
-    line-height: 100%;
-    letter-spacing: -1.5px;
-    text-align: center;
-
-    @include mixins.on-tablet {
-      width: 600px;
-
-      font-size: 64px;
+    &:hover {
+      transform: scale(1.2);
     }
 
-    @include mixins.on-desktop {
-      font-size: 80px;
-      width: 672px;
+    @include on-tablet {
+      width: 187px;
+      height: 56px;
     }
   }
 
   &__bottom {
     text-align: center;
-
-    display: flex;
-    justify-content: center;
     padding-bottom: 88px;
 
-    @include mixins.on-tablet {
+    @include on-tablet {
       padding-bottom: 130px;
     }
 
-    @include mixins.on-desktop {
+    @include on-desktop {
       padding-bottom: 203px;
     }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700px;
+    font-size: 36px;
+    letter-spacing: -1.5px;
+
+    @include on-tablet {
+      font-size: 64px;
+    }
+  }
+
+  @include on-tablet {
+    background-position: right center;
+  }
+
+  @include on-desktop {
+    background-position: center;
   }
 }

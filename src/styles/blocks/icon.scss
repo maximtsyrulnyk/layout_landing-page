@@ -1,45 +1,74 @@
-@use '../utils/mixins';
+.top-bar__icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
 .icon {
   display: block;
-  width: 24px;
   height: 24px;
-  background-image: url(../images/cover_photo.png);
+  width: 24px;
   background-size: cover;
+  transition: transform 0.3s ease;
+
+  @include on-tablet {
+    height: 32px;
+    width: 32px;
+  }
 
   &--phone {
-    background-image: url(../images/icons/Icon-Phone-call.png);
+    background-image: url(../icons/Icon-Phone-call.png);
   }
 
   &--menu {
-    background-image: url(../images/icons/Icon-Burger-menu.png);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
+    background-image: url(../icons/Icon-Burger-menu.png);
 
-  &--menu:hover {
-    background-image: url(../images/icon-Burger-menu-rotate.svg);
+    &:hover {
+      transform: scale(1.25);
+      background-image: url(../icons/Icon-Burger-menu-hover.png);
+    }
   }
 
   &--close {
-    background-image: url(../images/icons/close.png);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    background-image: url(../icons/Icon-Close.png);
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+}
+
+.phone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  .icon--phone {
+    transition: transform 0.3s ease;
   }
 
-  &--close:hover {
-    transform: rotate(90deg);
+  .phone__number {
+    position: absolute;
+    right: 100%;
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
   }
 
-  @include mixins.on-tablet {
-    width: 32px;
-    height: 32px;
-  }
+  &:hover {
+    .icon--phone {
+      transform: scale(1.25);
+    }
 
-  @include mixins.on-desktop {
-    width: 32px;
-    height: 32px;
+    .phone__number {
+      opacity: 1;
+    }
   }
 }

@@ -1,105 +1,119 @@
-@use '../utils/mixins';
-@use '../utils/variables' as v;
-
 .details {
   &__wrapper {
     display: grid;
-
     row-gap: 40px;
-    padding-bottom: 40px;
 
-    @include mixins.on-tablet {
-      padding-bottom: 48px;
-      row-gap: 64px;
+    @include on-tablet {
+      row-gap: 48px;
     }
-  }
-
-  &__paragraph {
-    margin: 0;
-    color: v.$main-text-color;
-    font-family: v.$font-family;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 140%;
   }
 }
 
 .detail {
-  display: grid;
-  margin: 0;
+  &__photos {
+    @include page-grid;
 
-  &__paragraph {
-    margin: 0;
-    padding: 16px 0 8px;
+    margin-bottom: 16px;
   }
 
-  &__photos {
-    @include mixins.page-grid;
+  &__link {
+    position: relative;
+
+    &--wide {
+      @include on-tablet {
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 8;
+      }
+    }
+    &--square {
+      height: 0;
+      padding-bottom: 100%;
+
+      @include on-tablet {
+        grid-column: span 2;
+      }
+
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
   }
 
   &__photo {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
+    transition: transform 0.3s ease;
 
-  &__photo:hover {
-    transform: translateY(-2px);
-    transform: scale(1.04);
-  }
-
-  &__description {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__paragrapf {
-    margin: 0;
-  }
-
-  .wraper-title {
-    @include mixins.page-grid;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__title {
     margin: 0;
+    font-weight: 700;
+    font-size: 24px;
     line-height: 140%;
-    font-family: v.$font-family;
-    font-weight: 400;
-    font-size: 16px;
-    grid-column: span 2;
+  }
 
-    @include mixins.on-tablet {
-      grid-column: span 6;
-    }
+  &__description {
+    margin-top: 8px;
+    margin-bottom: 8px;
 
-    @include mixins.on-desktop {
-      grid-column: span 8;
+    @include on-desktop {
+      max-width: 66.67%;
     }
   }
 
-  &__link {
-    &--square {
-      @include mixins.on-tablet {
-        grid-column: span 2;
-      }
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      @include mixins.on-desktop {
-        grid-column: span 4;
-      }
+    width: 278px;
+    height: 56px;
+
+    background-color: #fff;
+    border-radius: 40px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    color: #000;
+    text-decoration: none;
+
+    padding: 0 48px;
+    margin: 32px auto 0;
+    transition:
+      box-shadow 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      color: #000;
+      box-shadow: 1px 4px 16px 0 #e8e8f066;
     }
 
-    &--wide {
-      @include mixins.on-tablet {
-        grid-column: span 4;
-      }
+    &:focus,
+    &:active {
+      color: #000;
+      box-shadow: 1px 4px 16px 0 #e8e8f0a3;
+      outline: none;
+    }
 
-      @include mixins.on-desktop {
-        grid-column: span 8;
-      }
+    @include on-tablet {
+      width: 392px;
+      margin-top: 40px;
+    }
+
+    @include on-desktop {
+      width: 324px;
+      margin-top: 40px;
     }
   }
 }
